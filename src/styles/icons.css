@@ -11,8 +11,8 @@ body {
 }
 
 .icon-grid {
-    display: flex;
-    gap: 3rem;
+  display: flex;
+  gap: 0.75rem;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -23,4 +23,59 @@ body {
 .lucide {
     width: 100px;
     height: 100px;
+}
+
+svg {
+  width: 80px;
+  height: 80px;
+  margin: 0 8px;
+  color: white;
+  overflow: visible;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #111;
+  background: radial-gradient(circle,rgba(17, 17, 17, 1) 75%, rgba(209, 42, 42, 1) 100%, rgba(212, 36, 36, 1) 100%);
+/*     radial-gradient(circle,rgba(17, 17, 17, 1) 38%, rgba(81, 70, 100, 1) 78%, rgba(81, 70, 100, 1) 88%); */
+  
+/* cloud */
+#cloud-moon {
+  
+}
+
+/* popcorn */
+#popcorn {
+  
+}
+
+.bucket1 {
+  color: #D16666;
+}
+/* candy */
+#candy {
+  position: relative;
+  /* match svg horizontal margin so candy aligns with other icons */
+  margin: 0 8px;
+}
+
+.wrapper {
+  color: pink;
+}
+
+.wrapper1 {
+    color: #514664;
+}
+/* chair */
+#chair {
+  color: #514664;
+}
+
+/* tv */
+#tv {
+  color: #1F3C4F;
 }

@@ -4,27 +4,19 @@
 
 <!-- Hexagon icon from Lucide -->
 
-<svg id="theHexagon"
-xmlns="http://www.w3.org/2000/svg"
-width="24"
-height="24"
-viewBox="0 0 24 24"
-fill="none"
-stroke="currentColor"
-stroke-width="2"
-stroke-linecap="round"
-stroke-linejoin="round"
-class="lucide lucide-hexagon-icon lucide-hexagon">
-
-    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-
+<!-- tv icon -->
+<svg id="tv" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-tv-icon lucide-tv">
+  <!--  antenna  -->
+  <path stroke="grey" d="m17 2-5 5-5-5"/>
+<!--  box  -->
+  <rect width="20" height="15" x="2" y="7" rx="2"/>
 </svg>
 
 <!-- GSAP Scripting -->
 <script>
     import gsap from 'gsap';
 
-    gsap.from('#theHexagon path', {
+    gsap.from('#tv', {
         scale: 2,
         opacity: 0,
         transformOrigin: 'center',
@@ -33,11 +25,11 @@ class="lucide lucide-hexagon-icon lucide-hexagon">
     });
 
     // Hover animations
-    const hexagon = document.querySelector('#theHexagon');
+    const hexagon = document.querySelector('#tv');
 
     hexagon.addEventListener('mouseenter', () => {
-        gsap.to('#theHexagon path', {
-            rotation: 30,
+        gsap.to('#tv', {
+            scale: 1.5,
             transformOrigin: 'center',
             duration: 0.4,
             ease: 'power2.out'
@@ -45,11 +37,56 @@ class="lucide lucide-hexagon-icon lucide-hexagon">
     });
 
     hexagon.addEventListener('mouseleave', () => {
-        gsap.to('#theHexagon path', {
-            rotation: 0,
+        gsap.to('#tv', {
+            scale: 1,
             transformOrigin: 'center',
             duration: 0.4,
             ease: 'power2.in'
         });
     });
+
+/* tv animation */
+const tvTL = gsap.timeline();
+
+tvTL.from("#tv", {
+  x: 600,
+  opacity: 0,
+  duration: 1.2,
+  ease: "power4.out"
+})
+
+// settle
+.to("#tv", {
+  x: -8,
+  duration: 0.15,
+  ease: "power1.out",
+  yoyo: true,
+  repeat: 1
+})
+
+// flicker
+.to("#tv", {
+  opacity: 0.3,
+  duration: 0.08,
+  repeat: 5,
+  yoyo: true,
+  ease: "none",
+  delay: 0.2
+})
+
+// landing
+.to("#tv", {
+  opacity: 1,
+  duration: 0.2
+})
+
+gsap.to("#tv", {
+  scale: 1.2,
+  duration: 2,
+  repeat: -1,
+  yoyo: true,
+  ease: "sine.inOut",
+  transformOrigin: "center center",
+  delay: 2
+});
 </script>
