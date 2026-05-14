@@ -1,4 +1,5 @@
 # Animated SVG Icon Set
+## In this project I exercised my knowledge of JavaScript foundations and animations using GreenSock Animation Platform. I also showcased my ability to navagate frameworks, for this project our front-end framework is Astro. 
 
 ## Why? 
 * Understand the parts of SVG elements that can be animated
